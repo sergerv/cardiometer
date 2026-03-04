@@ -1,0 +1,27 @@
+<section id="cm-embed-root">
+  <style>
+    #cm-embed-root { font: 14px/1.4 system-ui, Arial, sans-serif; }
+    #cm-embed-root .cm-box { border: 1px solid #e5e5e5; border-radius: 8px; padding: 16px; }
+    #cm-embed-root .cm-title { font-weight: 600; margin: 0 0 8px; }
+    #cm-embed-root .cm-muted { color: #666; font-size: 12px; }
+    #cm-embed-root button { padding: 8px 12px; border-radius: 6px; border: 1px solid #bbb; cursor: pointer; }
+  </style>
+  <div class="cm-box">
+    <h3 class="cm-title">Cardiometer — embed v1</h3>
+    <p class="cm-muted">Этот блок можно вставлять в LPmotor как есть.</p>
+    <div class="cm-result">Пульс: <strong id="cm-pulse">—</strong></div>
+    <br />
+    <button id="cm-btn">Сгенерировать пульс</button>
+  </div>
+  <script>
+    (function () {
+      const root = document.getElementById('cm-embed-root');
+      if (!root) return;
+      const $ = (sel) => root.querySelector(sel);
+      $('#cm-btn')?.addEventListener('click', () => {
+        const value = 60 + Math.floor(Math.random() * 40);
+        $('#cm-pulse').textContent = value;
+      });
+    })();
+  </script>
+</section>
