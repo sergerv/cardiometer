@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <title>Cardiometer — widget v1</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root { color-scheme: light dark; }
+    body { font: 14px/1.4 system-ui, Arial, sans-serif; margin: 0; padding: 16px; }
+    .wrap { max-width: 720px; margin: 0 auto; }
+    .box { border: 1px solid #e5e5e5; border-radius: 8px; padding: 16px; }
+    .title { font-weight: 600; margin: 0 0 8px; }
+    .muted { color: #666; font-size: 12px; }
+    button { padding: 8px 12px; border-radius: 6px; border: 1px solid #bbb; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="box">
+      <h1 class="title">Cardiometer — widget v1</h1>
+      <p class="muted">Версия для вставки через &lt;iframe&gt;.</p>
+      <div>Пульс: <strong id="pulse">—</strong></div>
+      <br />
+      <button id="btn">Сгенерировать пульс</button>
+    </div>
+  </div>
+  <script>
+    const btn = document.getElementById('btn');
+    const pulse = document.getElementById('pulse');
+    btn?.addEventListener('click', () => {
+      pulse.textContent = 60 + Math.floor(Math.random() * 40);
+    });
+  </script>
+</body>
+</html>
